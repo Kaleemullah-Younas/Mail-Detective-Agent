@@ -21,7 +21,7 @@ It goes into your inbox, finds what matters, and files a classified report.
 | README.md            | Project overview - this file              |
 | ARCHITECTURE.md      | System design, data flow, components      |
 | MATCHING-CRITERIA.md | Full scoring algorithm and matching logic |
-| API-INTEGRATION.md   | Gemini 2.0 Flash setup and prompt design  |
+| API-INTEGRATION.md   | GLM-5.1 setup and prompt design           |
 | UI-FLOW.md           | Screen by screen user journey             |
 | SAMPLE-DATA.md       | Sample emails used in the demo            |
 
@@ -49,7 +49,7 @@ Mail Detective solves all five problems in a single workflow.
 | Frontend       | React 19, Tailwind CSS 4, TypeScript 5                  |
 | Database       | MongoDB Atlas + Prisma 6                                |
 | Auth           | Better Auth 1.4                                         |
-| AI Model       | Gemini 2.0 Flash via Google AI Studio API               |
+| AI Model       | GLM-5.1 via z.ai                                        |
 | API Layer      | tRPC 11                                                 |
 | Scoring Engine | Deterministic TypeScript — no AI involvement in ranking |
 | Email          | Brevo SMTP (Nodemailer)                                 |

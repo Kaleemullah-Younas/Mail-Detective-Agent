@@ -1,27 +1,24 @@
-# API-INTEGRATION.md - Gemini 2.0 Flash Integration
+# API-INTEGRATION.md - GLM-5.1 Integration
 
 ---
 
-## Why Gemini 2.0 Flash
+## Why GLM-5.1
 
-Mail Detective uses Gemini 2.0 Flash as its AI backbone for three reasons. First, it produces clean, structured JSON output reliably - critical for a system that depends on machine-readable extraction. Second, its one-million token context window means all fifteen emails plus the student profile fit comfortably in a single call. Third, it is fast - response times are typically under five seconds for a full inbox analysis, which keeps the user experience responsive.
-
-GLM-4 was considered as an alternative but its JSON consistency in English-language extraction tasks is weaker, and it is optimized for Chinese-language workloads. For this problem, Gemini is the clear choice.
+Mail Detective uses GLM-5.1 via z.ai as its AI backbone. It exposes an OpenAI-compatible API, making it a drop-in replacement that works with the standard OpenAI client. It produces clean, structured JSON output reliably — critical for a system that depends on machine-readable extraction — and handles large context windows comfortably, meaning all emails plus the student profile fit in a single call.
 
 ---
 
 ## API Configuration
 
-| Parameter          | Value            | Reason                                |
-| ------------------ | ---------------- | ------------------------------------- |
-| Model              | gemini-2.0-flash | Best balance of speed and quality     |
-| Temperature        | 0.1              | Near-deterministic extraction         |
-| Max Output Tokens  | 8192             | Enough for 15 emails with full JSON   |
-| Response MIME Type | application/json | Forces raw JSON, no markdown wrapping |
+| Parameter   | Value                               | Reason                            |
+| ----------- | ----------------------------------- | --------------------------------- |
+| Model       | GLM-5.1                             | Best balance of speed and quality |
+| Base URL    | https://api.z.ai/api/coding/paas/v4 | z.ai OpenAI-compatible endpoint   |
+| Temperature | 0.1                                 | Near-deterministic extraction     |
 
-**Temperature at 0.1** is critical. Extraction tasks need consistency, not creativity. At higher temperatures, Gemini may vary its JSON structure, invent deadline dates, or add fields not in the schema. At 0.1, it follows the schema precisely every time.
+**Temperature at 0.1** is critical. Extraction tasks need consistency, not creativity. At higher temperatures the model may vary its JSON structure or invent deadline dates. At 0.1, it follows the schema precisely every time.
 
-**Response MIME Type** set to application/json is one of the most important settings. Without it, Gemini wraps its JSON in markdown code fences, requiring brittle string cleaning. With it, the response is raw parseable JSON.
+**OpenAI-compatible client** means no proprietary SDK is needed. The standard `openai` npm package is used with a custom `baseURL` pointing to z.ai, and multi-key rotation is handled in `src/lib/gemini.ts` (the GLM gateway module).
 
 ---
 
@@ -34,15 +31,15 @@ All emails are sent in one API call, not one call per email. This is intentional
 - Faster total response time - one network round trip instead of fifteen
 - Lower API cost - fewer requests, less overhead
 - Consistent output format - one schema check instead of fifteen
-- Gemini can cross-reference emails - useful if two emails are about the same opportunity
+- The model can cross-reference emails - useful if two emails are about the same opportunity
 
-**Why it works:** At an average of 300 tokens per email, fifteen emails consume roughly 4,500 tokens. The student profile adds another 200 tokens. The prompt instructions add 500 tokens. The total input is well under 6,000 tokens - a tiny fraction of Gemini 2.0 Flash's one-million token limit.
+**Why it works:** At an average of 300 tokens per email, fifteen emails consume roughly 4,500 tokens. The student profile adds another 200 tokens. The prompt instructions add 500 tokens. The total input is well under 6,000 tokens, well within GLM-5.1's context window.
 
 ---
 
-## What Gemini Extracts
+## What the Model Extracts
 
-For every email, Gemini extracts the following 16 fields. These fields feed directly into the scoring engine.
+For every email, the model extracts the following 16 fields. These fields feed directly into the scoring engine.
 
 | Field              | Type          | Description                                                        |
 | ------------------ | ------------- | ------------------------------------------------------------------ |
@@ -69,7 +66,7 @@ For every email, Gemini extracts the following 16 fields. These fields feed dire
 
 ## Classification Rules
 
-Gemini is instructed to classify an email as a real opportunity only if all three of the following are true:
+The model is instructed to classify an email as a real opportunity only if all three of the following are true:
 
 1. The email describes something the student can actively apply for or participate in
 2. There is a clear target audience with some form of eligibility
@@ -81,7 +78,7 @@ Emails that fail any of these conditions are classified as non-opportunities. Co
 
 ## Deadline Extraction and Normalization
 
-Deadline extraction is one of the most important tasks Gemini performs. Deadlines appear in email bodies in many formats:
+Deadline extraction is one of the most important tasks the model performs. Deadlines appear in email bodies in many formats:
 
 - "Apply by April 30, 2025"
 - "Deadline: 30/04/2025"
@@ -89,24 +86,24 @@ Deadline extraction is one of the most important tasks Gemini performs. Deadline
 - "Last date to apply is next Friday"
 - "Rolling admissions - apply soon"
 
-Gemini is instructed to convert any found deadline into YYYY-MM-DD format and also return the original phrase as deadline_text for transparency. If no deadline is found, both fields return null.
+The model is instructed to convert any found deadline into YYYY-MM-DD format and also return the original phrase as deadline_text for transparency. If no deadline is found, both fields return null.
 
-Today's date is injected into the prompt so Gemini can correctly interpret relative phrases like "next Friday" or "end of this month."
+Today's date is injected into the prompt so the model can correctly interpret relative phrases like "next Friday" or "end of this month."
 
 ---
 
 ## Prompt Design Principles
 
-The prompt given to Gemini follows five principles.
+The prompt follows five principles.
 
-**Specificity over generality.** The prompt provides the exact JSON schema Gemini must follow, field by field, with types and allowed values. Vague instructions produce vague output.
+**Specificity over generality.** The prompt provides the exact JSON schema the model must follow, field by field, with types and allowed values. Vague instructions produce vague output.
 
-**Hard output rules.** Gemini is explicitly told to return only the JSON array with no explanation, no preamble, no markdown. This is reinforced by the responseMimeType setting at the API level.
+**Hard output rules.** The model is explicitly told to return only the JSON array with no explanation, no preamble, no markdown.
 
-**Contextual grounding.** The student profile is included in the prompt so Gemini can extract fields more intelligently. For example, when the profile shows a BS Computer Science student, Gemini can better identify relevant skill requirements.
+**Contextual grounding.** The student profile is included in the prompt so the model can extract fields more intelligently. For example, when the profile shows a BS Computer Science student, it can better identify relevant skill requirements.
 
 **Date injection.** Today's date is included so relative deadline phrases are interpreted correctly.
 
-**Strict classification criteria.** Gemini is told exactly what counts as a real opportunity and what does not, preventing over-classification of newsletters and promotional content as opportunities.
+**Strict classification criteria.** The model is told exactly what counts as a real opportunity and what does not, preventing over-classification of newsletters and promotional content as opportunities.
 
 ---

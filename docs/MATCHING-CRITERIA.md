@@ -178,7 +178,7 @@ Every opportunity card displays a color-coded badge based on days remaining.
 
 ## What Gets Filtered Out Before Scoring
 
-The scoring engine only processes emails that Gemini classified as real opportunities (is_opportunity = true). The following are filtered out entirely and shown only in the collapsed spam section:
+The scoring engine only processes emails that the model classified as real opportunities (is_opportunity = true). The following are filtered out entirely and shown only in the collapsed spam section:
 
 - Promotional emails (sales, discounts, offers)
 - University newsletters and announcements

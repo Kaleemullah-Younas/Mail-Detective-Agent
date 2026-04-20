@@ -18,7 +18,7 @@
 [![Prisma](https://img.shields.io/badge/Prisma-6-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io/)
 [![Better Auth](https://img.shields.io/badge/Better_Auth-1.4-6366F1?style=for-the-badge)](https://better-auth.com/)
 
-[![Gemini](https://img.shields.io/badge/Gemini_2.0_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![GLM](https://img.shields.io/badge/GLM--5.1-z.ai-FF6B35?style=for-the-badge)](https://z.ai/)
 [![tRPC](https://img.shields.io/badge/tRPC-11-2596BE?style=for-the-badge&logo=trpc&logoColor=white)](https://trpc.io/)
 
 </div>
@@ -55,7 +55,7 @@ Students miss life-changing opportunities because email inboxes are noisy. The p
 - **Verdict system** — Clear `APPLY`, `CONSIDER`, or `SKIP` recommendations
 - **Deadline awareness** — Urgency-based ranking with countdown tracking
 - **Resume parsing** — Upload a PDF resume to auto-populate your profile
-- **Multi-key Gemini rotation** — Built-in API key rotation with retry on 429/503
+- **Multi-key GLM rotation** — Built-in API key rotation with retry on 429/503
 - **Full auth system** — Email/password, OAuth (GitHub, Google), email verification, password reset
 - **Dark mode** — System-aware theme switching
 
@@ -69,7 +69,7 @@ Students miss life-changing opportunities because email inboxes are noisy. The p
 | :----------------------------------------------------------------------------------------: | :-----------: |
 |   ![Node](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)    |      18+      |
 | ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white) | Atlas cluster |
-| ![Gemini](https://img.shields.io/badge/Gemini-API_Key-4285F4?logo=google&logoColor=white)  |   Required    |
+|                ![GLM](https://img.shields.io/badge/GLM--5.1-API_Key-FF6B35)                |   Required    |
 |                ![Brevo](https://img.shields.io/badge/Brevo-SMTP_Key-0078D4)                |   Required    |
 
 ### Installation
@@ -118,26 +118,26 @@ GOOGLE_CLIENT_SECRET=""
 BREVO_USER="your@email.com"
 BREVO_PASS="xsmtpsib-..."
 
-# Gemini - comma-separated for key rotation
+# GLM API key - comma-separated for key rotation
 GEMINI_API_KEY="key1,key2,key3"
 ```
 
-> See [docs/API-INTEGRATION.md](docs/API-INTEGRATION.md) for Gemini configuration details.
+> See [docs/API-INTEGRATION.md](docs/API-INTEGRATION.md) for GLM configuration details.
 
 ---
 
 ## Tech Stack
 
-| Layer     | Technology                           |
-| --------- | ------------------------------------ |
-| Framework | Next.js 16.1 (App Router, Turbopack) |
-| Frontend  | React 19, Tailwind CSS 4             |
-| Language  | TypeScript 5                         |
-| Database  | MongoDB Atlas + Prisma 6             |
-| Auth      | Better Auth 1.4                      |
-| AI        | Gemini 2.0 Flash (multi-key)         |
-| API Layer | tRPC 11                              |
-| Email     | Brevo SMTP (Nodemailer)              |
+| Layer     | Technology                            |
+| --------- | ------------------------------------- |
+| Framework | Next.js 16.1 (App Router, Turbopack)  |
+| Frontend  | React 19, Tailwind CSS 4              |
+| Language  | TypeScript 5                          |
+| Database  | MongoDB Atlas + Prisma 6              |
+| Auth      | Better Auth 1.4                       |
+| AI        | GLM-5.1 via z.ai (multi-key rotation) |
+| API Layer | tRPC 11                               |
+| Email     | Brevo SMTP (Nodemailer)               |
 
 ---
 
@@ -158,7 +158,7 @@ mail-detective/
 │   ├── components/
 │   │   └── dashboard/         # Sidebar · EmailList · EmailDetail
 │   ├── lib/
-│   │   ├── gemini.ts          # Multi-key rotation client
+│   │   ├── gemini.ts          # Multi-key GLM rotation client
 │   │   ├── emails/            # types · parse · scoring logic
 │   │   └── auth.ts
 │   └── server/routers/        # tRPC routers
@@ -176,7 +176,7 @@ mail-detective/
 | :----------------------------------------------------: | :-------------------------------- |
 |            [docs/README.md](docs/README.md)            | Documentation index               |
 |      [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)      | System design & data flow         |
-|   [docs/API-INTEGRATION.md](docs/API-INTEGRATION.md)   | Gemini 2.0 Flash setup & prompts  |
+|   [docs/API-INTEGRATION.md](docs/API-INTEGRATION.md)   | GLM-5.1 setup & prompts           |
 | [docs/MATCHING-CRITERIA.md](docs/MATCHING-CRITERIA.md) | Scoring algorithm & ranking logic |
 |       [docs/SAMPLE-DATA.md](docs/SAMPLE-DATA.md)       | Sample emails & test data         |
 
