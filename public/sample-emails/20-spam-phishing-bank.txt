@@ -1,0 +1,27 @@
+From: security-alert@hbl-secure.com
+Subject: URGENT: Your HBL Account Has Been Suspended - Verify Now
+Date: 2026-03-29
+
+Dear Valued Customer,
+
+We have detected unusual activity on your HBL Internet Banking account. For your security, your account has been TEMPORARILY SUSPENDED.
+
+To restore access, you must verify your account details within 24 HOURS or your account will be permanently disabled.
+
+CLICK HERE TO VERIFY: http://hbl-account-verify.suspicious-domain.com/verify
+
+You will need to provide:
+- Your full name and CNIC
+- Account number
+- ATM card number
+- 4-digit PIN
+- Internet Banking password
+- OTP (we will send it to your registered mobile)
+
+If you do not verify within 24 hours, your account will remain blocked and you will need to visit a branch with original documents.
+
+This is an automated security notification.
+HBL Internet Banking Security Team
+24/7 Helpline: 111-111-424
+
+DO NOT share this email with anyone.

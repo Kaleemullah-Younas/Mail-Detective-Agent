@@ -1,0 +1,35 @@
+From: internships@google.com
+Subject: Google STEP Internship Program - Apply Now for Summer 2026
+Date: 2026-03-01
+
+Hi,
+
+Google is now accepting applications for the STEP (Student Training in Engineering Program) Internship for Summer 2026.
+
+About STEP:
+STEP is a developmental internship program designed to introduce undergraduate students to careers at Google through a combination of coursework and project work. The program focuses on students from groups underrepresented in tech.
+
+What You'll Do:
+- Work on a real Google project with a dedicated manager and technical mentor
+- Participate in formal learning opportunities (workshops, tech talks)
+- Network with Googlers and fellow interns
+- Contribute to products used by billions of people
+
+Requirements:
+- Currently enrolled in a Bachelor's degree program (2nd or 3rd year preferred)
+- Minimum CGPA: 3.2/4.0
+- Proficient in at least one of: C++, Java, Python, Go
+- Strong problem-solving and data structures skills
+- Available June - August 2026 (10-12 weeks)
+
+Compensation:
+- Competitive monthly stipend (USD 7,000 - 9,000/month depending on location)
+- Housing allowance or Google-arranged housing
+- Relocation assistance
+
+Application Deadline: 30 April 2026
+
+Apply: https://careers.google.com/students/
+
+Questions: student-internships@google.com
+Google Careers Team

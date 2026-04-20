@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @map("_id")
+  name          String
+  email         String   @unique
+  emailVerified Boolean  @default(false)
+  image         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  sessions           Session[]
+  accounts           Account[]
+  profile            StudentProfile?
+  savedEmails        SavedEmail[]
+  investigationBatch InvestigationBatch?
+}
+
+model StudentProfile {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Identity
+  fullName  String
+  avatarUrl String?
+
+  // Academic
+  degreeProgram String
+  university    String?
+  semester      Int
+  cgpa          Float
+
+  // Profile signal
+  skills                    String[]
+  preferredOpportunityTypes String[]
+  financialNeed             Boolean  @default(false)
+  locationPreference        String?
+  pastExperience            String?
+
+  // Provenance
+  source         ProfileSource @default(MANUAL)
+  resumeFileName String?
+  resumeRawText  String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ProfileSource {
+  MANUAL
+  RESUME
+}
+
+model InvestigationBatch {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @unique
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  classified Json
+  scored     Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model SavedEmail {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Snapshot of the scored email so we can show it later even if the
+  // original session data is gone.
+  emailId           String // id used in the pipeline (client-generated)
+  from              String
+  subject           String
+  date              String?
+  body              String
+  title             String
+  organisation      String?
+  opportunityType   String
+  deadline          String?
+  deadlineIso       String?
+  eligibility       String[]
+  requiredDocuments String[]
+  link              String?
+  location          String?
+  stipendOrValue    String?
+  summary           String
+  score             Int
+  urgencyScore      Int
+  fitScore          Int
+  eligibilityScore  Int
+  effortRewardScore Int
+  verdict           String
+  reasoning         String
+  highlights        String[]
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, emailId])
+  @@index([userId])
+}
+
+model Session {
+  id        String   @id @map("_id")
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                    String    @id @map("_id")
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+model Verification {
+  id         String   @id @map("_id")
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}

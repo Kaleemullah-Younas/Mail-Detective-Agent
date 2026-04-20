@@ -1,0 +1,36 @@
+From: recruiting@meta.com
+Subject: Meta University - Software Engineering Internship, Summer 2026
+Date: 2026-02-28
+
+Hi there,
+
+Meta is hiring Software Engineering Interns for Summer 2026. We build products that connect billions of people - and we want students who want to build things at that scale.
+
+What You'll Work On:
+- Core infrastructure for Facebook, Instagram, WhatsApp, or Messenger
+- AI/ML systems powering the Feed, Ads, or Integrity products
+- Developer tools used internally across Meta
+- Metaverse / Reality Labs projects
+
+What We Look For:
+- Currently pursuing a BS/MS in Computer Science or equivalent
+- Strong grasp of algorithms, data structures, and systems design
+- Experience in C++, Python, Java, or Hack
+- Minimum 3rd year (or final year for MS entry)
+- Ability to relocate to Menlo Park CA, Seattle WA, or New York NY
+
+Compensation & Benefits:
+- USD 8,000 - 10,500/month depending on location
+- Free housing or generous housing stipend
+- Free meals at Meta cafeterias
+- Transportation allowance
+- MacBook Pro provided
+
+How to Apply:
+Submit your resume at https://www.metacareers.com/students/
+
+Interview process: 2 technical rounds (coding + system design)
+
+Application closes: 1 May 2026
+
+Meta University Recruiting

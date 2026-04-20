@@ -1,0 +1,42 @@
+From: careers@careem.com
+Subject: Software Engineer - Backend (Golang) at Careem, Lahore
+Date: 2026-03-28
+
+Hi,
+
+Careem is hiring Software Engineers to join our Platform Engineering team in Lahore. If you like working on high-scale distributed systems that handle millions of requests per day, we want to hear from you.
+
+Role: Software Engineer - Backend (Golang)
+Team: Platform Engineering
+Location: Lahore, Pakistan (hybrid - 3 days onsite)
+Level: Junior to Mid (0-3 years experience)
+
+What You'll Build:
+- Microservices powering Careem's ride-hailing, food delivery, and payments platform
+- APIs consumed by iOS, Android, and partner applications
+- Internal tooling for observability and incident management
+
+We're Looking For:
+- BS Computer Science or related field (CGPA 3.0+ preferred)
+- 0-3 years backend engineering experience
+- Strong knowledge of Go, Python, or Java
+- Understanding of REST APIs, SQL, and messaging systems (Kafka a plus)
+- Experience with Docker/Kubernetes a plus
+
+Compensation Package:
+- Gross salary: PKR 300,000 - 500,000/month (depending on experience)
+- Annual bonus
+- Careem credits (free rides + food delivery)
+- Health insurance for you and immediate family
+- Provident fund
+- 20 days annual leave
+
+To Apply:
+Send your resume to: jobs@careem.com
+Subject Line: SWE-Backend-Lahore-2026
+
+Or apply online: https://careers.careem.com
+
+Note: Only shortlisted candidates will be contacted for technical interviews.
+
+Careem Talent Acquisition

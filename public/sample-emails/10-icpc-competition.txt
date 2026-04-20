@@ -1,0 +1,34 @@
+From: icpc@nust.edu.pk
+Subject: ACM ICPC Pakistan Regional Contest 2026 - Team Registration Open
+Date: 2026-03-22
+
+Dear Students,
+
+Registrations are now open for the ACM International Collegiate Programming Contest (ICPC) 2026 Pakistan Regional Round.
+
+About ICPC:
+ICPC is the world's most prestigious competitive programming competition. Top teams from the Pakistan Regional advance to the ICPC Asia Regional and potentially the ICPC World Finals.
+
+Contest Details:
+- Date: 20 September 2026
+- Venue: NUST College of Electrical and Mechanical Engineering, Islamabad
+- Format: Team of 3, 5-hour contest, 10-13 algorithmic problems
+
+Registration:
+- Teams of 3 students from the same university
+- All team members must be enrolled as full-time students
+- Maximum 2 teams per university in the Preliminary Round
+- Students who have already participated in the World Finals are ineligible
+
+Benefits for Top Teams:
+- 1st Place: PKR 150,000 + certificates + invitation to ICPC Asia Regional
+- 2nd Place: PKR 100,000 + certificates
+- 3rd Place: PKR 60,000 + certificates
+- Top 5 teams: Internship fast-track at Systems Limited, 10Pearls, and Arbisoft
+
+Registration Deadline: 15 August 2026
+
+Register your team at: https://icpc.nust.edu.pk/register2026
+
+Contact: icpc.coordinator@nust.edu.pk
+NUST ICPC Organizing Committee

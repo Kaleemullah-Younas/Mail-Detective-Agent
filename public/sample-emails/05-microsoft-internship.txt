@@ -1,0 +1,37 @@
+From: recruitment@microsoft.com
+Subject: Microsoft Explore Internship Program - Summer 2026 Applications
+Date: 2026-03-05
+
+Hello,
+
+Microsoft is hiring for the Explore Internship Program for Summer 2026. This is a 12-week exploratory internship for first and second-year undergraduate students interested in software engineering and program management.
+
+Program Highlights:
+- Hands-on software engineering experience
+- Collaboration with full-time engineers
+- Access to Microsoft's Learning + Development resources
+- Mentorship from senior engineers
+- Potential conversion to SWE Internship in subsequent summers
+
+Eligibility:
+- Enrolled in Bachelor's degree in Computer Science, Software Engineering, or related field
+- First or second year student
+- Minimum CGPA 3.0/4.0
+- Strong foundation in data structures and algorithms
+- Familiarity with C#, Java, Python, or C++
+
+What We Offer:
+- USD 6,800/month stipend
+- Free corporate housing or housing stipend
+- Relocation assistance
+- Access to Microsoft 365
+
+Roles Available:
+- Explore Intern - Software Engineering
+- Explore Intern - Program Management
+
+Application Deadline: 15 May 2026
+
+Apply now: https://careers.microsoft.com/students/explore
+
+Microsoft University Recruiting Team

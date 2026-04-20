@@ -1,0 +1,38 @@
+From: admissions@mit.edu
+Subject: MIT Summer Research Program - International Student Applications 2026
+Date: 2026-02-20
+
+Dear Prospective Applicant,
+
+MIT's Department of Electrical Engineering and Computer Science (EECS) is inviting applications from exceptional international undergraduate students for the Summer 2026 Research Experience.
+
+Program Overview:
+The MIT EECS Summer Research Program pairs international undergraduates with MIT faculty and graduate student mentors to conduct cutting-edge research for 10 weeks.
+
+Research Areas:
+- Artificial Intelligence and Machine Learning
+- Robotics and Autonomous Systems
+- Quantum Computing
+- Computer Vision
+- Natural Language Processing
+- Distributed Systems
+
+Eligibility:
+- International student currently in penultimate or final year of undergraduate degree
+- GPA equivalent to 3.7/4.0 or above
+- Strong foundation in mathematics, algorithms, and at least one of: Python, C++, Julia
+- Letter of recommendation from a faculty member
+- English proficiency: IELTS 7.0+ or TOEFL 100+
+
+Program Benefits:
+- USD 6,500 stipend for 10 weeks
+- On-campus accommodation (MIT dorms)
+- Round-trip economy airfare
+- Access to MIT libraries, labs, and facilities
+- Certificate of completion from MIT EECS
+
+Deadline: 1 March 2026 (Extended to 31 March 2026)
+
+Apply at: https://eecs.mit.edu/academics/undergraduate-programs/summer-research/
+
+Contact: summerprog-eecs@mit.edu

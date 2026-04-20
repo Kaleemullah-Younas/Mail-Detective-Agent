@@ -1,0 +1,39 @@
+From: research@lums.edu.pk
+Subject: LUMS Undergraduate Research Assistant Positions - Summer 2026
+Date: 2026-03-18
+
+Dear Student,
+
+The Syed Babar Ali School of Science and Engineering (SBASSE) at LUMS is offering paid Research Assistant positions for Summer 2026.
+
+Available Research Groups:
+1. Computational Biology Lab - Dr. Imdad Ullah Khan
+   Topic: Genomic data analysis using machine learning
+   
+2. Networks & Systems Group - Dr. Zafar Ayyub Qazi
+   Topic: Software-Defined Networking for low-latency applications
+
+3. Human-Computer Interaction Lab - Dr. Suleman Shahid
+   Topic: Accessibility technologies for low-literacy users
+
+4. Data Science & Analytics Lab - Dr. Muhammad Ali Ismail
+   Topic: NLP for regional languages (Urdu/Punjabi)
+
+Requirements:
+- Currently enrolled in BS CS, BS EE, or BS Math at any accredited Pakistani university
+- Minimum CGPA 3.2/4.0
+- Strong programming skills (Python, R, or MATLAB)
+- Available for 8-10 weeks (June 1 - August 10, 2026)
+- Willingness to relocate to Lahore for the duration
+
+Stipend: PKR 40,000 - 60,000/month depending on experience
+Accommodation: LUMS student hostels available at subsidized rate
+
+Deadline to Apply: 25 April 2026
+
+Send your CV, transcript, and a 1-page statement of interest to:
+ugresearch@lums.edu.pk
+
+Subject Line: RA Application - [Lab Name] - [Your Name]
+
+LUMS Office of Research
